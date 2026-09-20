@@ -433,6 +433,56 @@
     ]
   },
   {
+    "id":61449,
+    "title": "Final Revision Batch | ACS",
+    "description": "FRB for HSC 26 | Apars Classroom",
+    "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1768888447943-542919277.jpg&w=828&q=75",
+    "tag":"Academic 26",
+    "content": [
+      {
+        "type": "folder",
+        "title": "ICT",
+        "description": "",
+        "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1772255063681-728599188.jpg&w=1920&q=75",
+        "content": [
+          {
+            "type": "folder",
+            "title": "Chapter 6",
+            "description": "Database Management System",
+            "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1762778184056-998780058.jpg&w=1920&q=75",
+            "content": [
+              {
+                "type": "video",
+                "title": "Database Management System 1",
+                "description": "",
+                "author": "Dipit Shaha",
+                "date": "12.03.2026",
+                "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1764820692985-590312080.jpg&w=1920&q=75",
+                "videoSrc": "https://iframe.mediadelivery.net/embed/610687/f6a5d895-be6f-4ed1-bc20-1e08557d56cd?autoplay=true",
+                "materials": [
+                  {
+                    "label": "Lecture Sheet",
+                    "src": "https://drive.google.com/file/d/1TqMjE9E69l_swhOtxhxRDAEgI14h32lc/preview"
+                  }
+                ]
+              },
+              {
+                "type": "video",
+                "title": "Database Management System 2",
+                "description": "",
+                "author": "Dipit Shaha",
+                "date": "12.03.2026",
+                "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1764878996314-158305276.jpg&w=1920&q=75",
+                "videoSrc": "https://iframe.mediadelivery.net/embed/610687/7525b8f3-7169-4ced-8201-231018c9ed5a?autoplay=true",
+                "materials": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": 12346,
     "type": "course",
     "title": "ACS Physics Cycle 2",
