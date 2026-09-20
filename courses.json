@@ -1,92 +1,92 @@
 [
   {
-    id:12345,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 27',
-    content : []
+    "id": 12345,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 27",
+    "content": []
   },
   {
-    id:12346,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 27',
-    content : []
+    "id": 12346,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 27",
+    "content": []
   },
   {
-    id:12347,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 27',
-    content : []
+    "id": 12347,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 27",
+    "content": []
   },
   {
-    id:12348,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 26',
-    content : []
+    "id": 12348,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 26",
+    "content": []
   },
   {
-    id:12349,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 26',
-    content : []
+    "id": 12349,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 26",
+    "content": []
   },
   {
-    id:12310,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 26',
-    content : []
+    "id": 12310,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 26",
+    "content": []
   },
   {
-    id:12311,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 28',
-    content : []
+    "id": 12311,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
   },
   {
-    id:123412,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 28',
-    content : []
+    "id": 123412,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
   },
   {
-    id:12313,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 28',
-    content : []
+    "id": 12313,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
   },
   {
-    id:12314,
-    type: 'course',
-    title:'ACS Physics Cycle 2',
-    description : 'ACS Physics Cycle 2',
-    thumbnail : 'https://i.postimg.cc/CLMnYLpz/sqre.jpg',
-    tag : 'Academic 28',
-    content : []
+    "id": 12314,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
   }
 ]
