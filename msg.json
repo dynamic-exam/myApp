@@ -2,5 +2,10 @@
   {
     "icon": "https://dynamic-exam.github.io/myApp/assets/image1.jpg",
     "label": "Never give up folks"
+  },
+  {
+    "icon": "https://dynamic-exam.github.io/myApp/assets/image2.jpg",
+    "label": "Hummingbird. Know more!",
+    "link": "https://en.wikipedia.org/wiki/Hummingbird"
   }
 ]
