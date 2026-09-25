@@ -113,7 +113,98 @@
             "title": "Physiology",
             "description": "",
             "thumbnail": "css/assets/thumbnail.png",
-            "content": []
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture-1: General Physiology",
+                "description": "Lecture-1: General Physiology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/cRZRlZnZAT4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-2: Blood & Haemostasis",
+                "description": "Lecture-2: Blood & Haemostasis",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/yR3qA-wLNAs",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-3: Respiratory & Acid-Base Balance",
+                "description": "Lecture-3: Respiratory & Acid-Base Balance",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/qOpZaNiRC-A",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-4: Cardiovascular System",
+                "description": "Lecture-4: Cardiovascular System",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/BsmQBjf1R0w",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-5: Alimentary, Metabolism & Nutrition",
+                "description": "Lecture-5: Alimentary, Metabolism & Nutrition",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/_Z1PM31Ursc",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-6: Endocrine & Reproduction",
+                "description": "Lecture-6: Endocrine & Reproduction",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/ZLuLD5JBkxE",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7: Renal & Body Fluid",
+                "description": "Lecture-7: Renal & Body Fluid",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/HnusTgrsJc4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-8: Nervous System, Special Senses",
+                "description": "Lecture-8: Nervous System, Special Senses",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/8jXfL2Pp0BE",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-8.2 Full Body Nerve Supply",
+                "description": "Lecture-8.2 Full Body Nerve Supply",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/J5ivy3lcy3Q",
+                "materials": []
+              }
+            ]
           },
           {
             "type": "folder",
