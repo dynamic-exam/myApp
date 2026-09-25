@@ -43,7 +43,7 @@
                 "author": "Unknown",
                 "date": "25.09.2026",
                 "thumbnail": "css/assets/thumbnail.png",
-                "videoSrc": "https://youtu.be/-c_PJU4-zNQ?si=TgaS8hVcV_9czbKw&autoplay=0",
+                "videoSrc": "https://youtube.com/embed/-c_PJU4-zNQ",
                 "materials": []
               },
               {
@@ -53,7 +53,7 @@
                 "author": "Unknown",
                 "date": "25.09.2026",
                 "thumbnail": "css/assets/thumbnail.png",
-                "videoSrc": "https://youtu.be/uKSsFfHyTy0?si=ag-fou58J8dCtRPf&autoplay=0",
+                "videoSrc": "https://youtube.com/embed/uKSsFfHyTy0",
                 "materials": []
               }
             ]
