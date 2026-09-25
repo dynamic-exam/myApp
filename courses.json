@@ -1,5 +1,138 @@
 [
   {
+    "id": 57946,
+    "type": "course",
+    "title": "51 Special BCS New Premium (General+Medical) for MBBS",
+    "description": "51 Special BCS New Premium (General+Medical) for MBBS",
+    "thumbnail": "https://www.p2a.academy/_next/image?url=https%3A%2F%2Fp2a-assets.blr1.cdn.digitaloceanspaces.com%2Fassets%2Fcourses%2F202609101246Course-Banner-01.webp&w=1920&q=75",
+    "tag": "BCS Preparation",
+    "content": [
+      {
+        "type": "folder",
+        "title": "General Part",
+        "description": "Bangla, English, Math, Mental Ability, BD & International Affairs",
+        "thumbnail": "css/assets/thumbnail.png",
+        "content": []
+      },
+      {
+        "type": "folder",
+        "title": "Medical Part",
+        "description": "11 Subjects: Anatomy to Gynae & Obs",
+        "thumbnail": "css/assets/thumbnail.png",
+        "content": [
+          {
+            "type": "folder",
+            "title": "Anatomy",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture 1: Anatomy-1",
+                "description": "Histology & Cell",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtu.be/AXX1PjAtmhc?si=beIJaDEaMBykB6hF&autoplay=0",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture 2: Anatomy-2",
+                "description": "Embryology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtu.be/-c_PJU4-zNQ?si=TgaS8hVcV_9czbKw&autoplay=0",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture 3: Anatomy-3",
+                "description": "Thorax",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtu.be/uKSsFfHyTy0?si=ag-fou58J8dCtRPf&autoplay=0",
+                "materials": []
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "title": "Physiology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Biochemistry",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Pathology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Microbiology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Pharmacology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Community Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Forensic Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Surgery",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Gynae & Obs",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": 12345,
     "type": "course",
     "title": "HSC 26 Pre medical course | Pacemaker",
@@ -433,11 +566,11 @@
     ]
   },
   {
-    "id":61449,
+    "id": 61449,
     "title": "Final Revision Batch | ACS",
     "description": "FRB for HSC 26 | Apars Classroom",
     "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/1000211330_1.png",
-    "tag":"Academic 26",
+    "tag": "Academic 26",
     "content": [
       {
         "type": "folder",
@@ -512,10 +645,10 @@
   {
     "id": 12349,
     "type": "course",
-    "title": "ACS Physics Cycle 2",
-    "description": "ACS Physics Cycle 2",
+    "title": "BCS Test Course | P2A",
+    "description": "BCS Test Course | P2A",
     "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
-    "tag": "Academic 26",
+    "tag": "BCS Preparation",
     "content": []
   },
   {
