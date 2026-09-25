@@ -211,7 +211,28 @@
             "title": "Biochemistry",
             "description": "",
             "thumbnail": "css/assets/thumbnail.png",
-            "content": []
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture-1: Biomolecules, Nutrition & Metabolism",
+                "description": "Lecture-1: Biomolecules, Nutrition & Metabolism",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/R8oKDM-CzTs",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-2: Acid-Base, Electrolytes, Clinical Biochem & Molecular Biology",
+                "description": "Lecture-2: Acid-Base, Electrolytes, Clinical Biochem & Molecular Biology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/j-4FfcJIhf4",
+                "materials": []
+              }
+            ]
           },
           {
             "type": "folder",
