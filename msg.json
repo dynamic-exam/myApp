@@ -7,5 +7,10 @@
     "icon": "https://dynamic-exam.github.io/myApp/assets/image2.jpg",
     "label": "Hummingbird. Know more!",
     "link": "https://en.wikipedia.org/wiki/Hummingbird"
+  },
+  {
+    "icon": "https://dynamic-exam.github.io/myApp/assets/image3.jpg",
+    "label": "Owls | Strigiformes",
+    "link": "https://en.wikipedia.org/wiki/Owl"
   }
 ]
