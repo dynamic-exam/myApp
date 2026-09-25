@@ -55,6 +55,56 @@
                 "thumbnail": "css/assets/thumbnail.png",
                 "videoSrc": "https://youtube.com/embed/uKSsFfHyTy0",
                 "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-4: Anatomy-4",
+                "description": "Abdomen & Pelvis",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/yyOxtXPtAH8",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-5: Anatomy-5",
+                "description": "Head, Neck &Neuroanatomy",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/zsoXq7KQdS4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-6: Anatomy-6",
+                "description": "Pelvis & Others",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/GyYqK09be2Q",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7: Anatomy-7",
+                "description": "Artery Supply of Full Body",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/2FkJW6YMw1Q",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7.2: Anatomy-8",
+                "description": "Limbs & Endocrine",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/ewbyYjtoyow",
+                "materials": []
               }
             ]
           },
