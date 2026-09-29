@@ -1,5 +1,14 @@
 [
   {
+    "id": 27187,
+    "type": "course",
+    "title": "New Course",
+    "description": "",
+    "thumbnail": "css/assets/thumbnail.png",
+    "tag": "New Tag",
+    "content": []
+  },
+  {
     "id": 57946,
     "type": "course",
     "title": "52 Special BCS New Premium (General+Medical) for MBBS",
