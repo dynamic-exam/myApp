@@ -457,6 +457,24 @@
                 "materials": []
               }
             ]
+          },
+          {
+            "type": "folder",
+            "title": "Chapter 3",
+            "description": "Digestion",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture 1",
+                "description": "",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://www.youtube.com/embed/AJxEupIsW0M?autoplay=0&controls=0&modestbranding=1&loop=1&playlist=AJxEupIsW0M&playsinline=1&rel=0&showinfo=0&mute=0&enablejsapi=1&origin=https%3A%2F%2Fasifsirpacemaker.com&widgetid=1&forigin=https%3A%2F%2Fasifsirpacemaker.com%2Fcourse%2Fmedicalbatch2026%2Fclass-link%2F27494&aoriginsup=1&gporigin=https%3A%2F%2Fasifsirpacemaker.com%2Fcourse%2Fmedicalbatch2026%2F818&vf=6",
+                "materials": []
+              }
+            ]
           }
         ]
       },
