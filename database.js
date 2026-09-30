@@ -1,9 +1,306 @@
-var courses = [
+var courses=[
   {
-    "id": "12001",
+    "id": 57946,
+    "type": "course",
+    "title": "52 Special BCS New Premium (General+Medical) for MBBS",
+    "description": "51 Special BCS New Premium (General+Medical) for MBBS",
+    "thumbnail": "https://www.p2a.academy/_next/image?url=https%3A%2F%2Fp2a-assets.blr1.cdn.digitaloceanspaces.com%2Fassets%2Fcourses%2F202609101246Course-Banner-01.webp&w=1920&q=75",
+    "tag": "BCS Preparation",
+    "content": [
+      {
+        "type": "folder",
+        "title": "General Part",
+        "description": "Bangla, English, Math, Mental Ability, BD & International Affairs",
+        "thumbnail": "css/assets/thumbnail.png",
+        "content": []
+      },
+      {
+        "type": "folder",
+        "title": "Medical Part",
+        "description": "11 Subjects: Anatomy to Gynae & Obs",
+        "thumbnail": "css/assets/thumbnail.png",
+        "content": [
+          {
+            "type": "folder",
+            "title": "Anatomy",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture 1: Anatomy-1",
+                "description": "Histology & Cell",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/AXX1PjAtmhc",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture 2: Anatomy-2",
+                "description": "Embryology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/-c_PJU4-zNQ",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture 3: Anatomy-3",
+                "description": "Thorax",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/uKSsFfHyTy0",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-4: Anatomy-4",
+                "description": "Abdomen & Pelvis",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/yyOxtXPtAH8",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-5: Anatomy-5",
+                "description": "Head, Neck &Neuroanatomy",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/zsoXq7KQdS4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-6: Anatomy-6",
+                "description": "Pelvis & Others",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/GyYqK09be2Q",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7: Anatomy-7",
+                "description": "Artery Supply of Full Body",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/2FkJW6YMw1Q",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7.2: Anatomy-8",
+                "description": "Limbs & Endocrine",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/ewbyYjtoyow",
+                "materials": []
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "title": "Physiology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture-1: General Physiology",
+                "description": "Lecture-1: General Physiology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/cRZRlZnZAT4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-2: Blood & Haemostasis",
+                "description": "Lecture-2: Blood & Haemostasis",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/yR3qA-wLNAs",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-3: Respiratory & Acid-Base Balance",
+                "description": "Lecture-3: Respiratory & Acid-Base Balance",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/qOpZaNiRC-A",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-4: Cardiovascular System",
+                "description": "Lecture-4: Cardiovascular System",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/BsmQBjf1R0w",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-5: Alimentary, Metabolism & Nutrition",
+                "description": "Lecture-5: Alimentary, Metabolism & Nutrition",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/_Z1PM31Ursc",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-6: Endocrine & Reproduction",
+                "description": "Lecture-6: Endocrine & Reproduction",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/ZLuLD5JBkxE",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-7: Renal & Body Fluid",
+                "description": "Lecture-7: Renal & Body Fluid",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/HnusTgrsJc4",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-8: Nervous System, Special Senses",
+                "description": "Lecture-8: Nervous System, Special Senses",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/8jXfL2Pp0BE",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-8.2 Full Body Nerve Supply",
+                "description": "Lecture-8.2 Full Body Nerve Supply",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/J5ivy3lcy3Q",
+                "materials": []
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "title": "Biochemistry",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture-1: Biomolecules, Nutrition & Metabolism",
+                "description": "Lecture-1: Biomolecules, Nutrition & Metabolism",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/R8oKDM-CzTs",
+                "materials": []
+              },
+              {
+                "type": "video",
+                "title": "Lecture-2: Acid-Base, Electrolytes, Clinical Biochem & Molecular Biology",
+                "description": "Lecture-2: Acid-Base, Electrolytes, Clinical Biochem & Molecular Biology",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://youtube.com/embed/j-4FfcJIhf4",
+                "materials": []
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "title": "Pathology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Microbiology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Pharmacology",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Community Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Forensic Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Medicine",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Surgery",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          },
+          {
+            "type": "folder",
+            "title": "Gynae & Obs",
+            "description": "",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12345,
+    "type": "course",
     "title": "HSC 26 Pre medical course | Pacemaker",
     "description": "Pre medical course for HSC 26 | 8 Subjects | 50+ Books | Daily & Weekly Exams",
     "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/WhatsApp_Image_2025-12-30_at_1.09.17_PM.jpeg",
+    "tag": "Admission 26",
     "content": [
       {
         "type": "folder",
@@ -160,6 +457,24 @@ var courses = [
                 "materials": []
               }
             ]
+          },
+          {
+            "type": "folder",
+            "title": "Chapter 3",
+            "description": "Digestion",
+            "thumbnail": "css/assets/thumbnail.png",
+            "content": [
+              {
+                "type": "video",
+                "title": "Lecture 1",
+                "description": "",
+                "author": "Unknown",
+                "date": "25.09.2026",
+                "thumbnail": "css/assets/thumbnail.png",
+                "videoSrc": "https://www.youtube.com/embed/AJxEupIsW0M",
+                "materials": []
+              }
+            ]
           }
         ]
       },
@@ -168,7 +483,63 @@ var courses = [
         "title": "Physics 1st Paper",
         "description": "All 10 chapters of physics 1st paper by Abid Jafar Sir.",
         "thumbnail": "css/assets/thumbnail.png",
-        "content": []
+        "content": [
+          {
+            "type": "video",
+            "title": "Chapter: 1, Part 1",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/AT04WFgve70",
+            "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Chapter 1, Part 2 + Chapter 2",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/uk1qhEFm6YI",
+            "materials": [
+              {
+                "label": "Lecture Sheet",
+                "src": "https://drive.google.com/file/d/1Bp0d16MlSWyz4vdSdT5Z5hE-cd_pqNL6/preview"
+              }
+            ]
+          },
+          {
+            "type": "video",
+            "title": "Chapter 3 + Chapter 9",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/PQf3tl-v7ac",
+            "materials": [
+              {
+                "label": "Lecture Sheet",
+                "src": "https://drive.google.com/file/d/15yDbztlhIZdbJexJaZkE1SmFiZSnc3y3/preview"
+              }
+            ]
+          },
+          {
+            "type": "video",
+            "title": "Chapter 4 + Chapter 5",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/u8zbvjQx1IE",
+            "materials": [
+              {
+                "label": "Lecture Sheet",
+                "src": "https://drive.google.com/file/d/1ArKG3oqdZhdrzwP5z7BGUwtAMcFOo8N-/preview"
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "folder",
@@ -411,12 +782,22 @@ var courses = [
         "content": [
           {
             "type": "video",
-            "title": "Lecture 1",
+            "title": "Basic Class 1",
             "description": "Basic Class | English",
             "author": "Hannan Sir",
             "date": "12.02.2026",
             "thumbnail": "css/assets/thumbnail.png",
             "videoSrc": "https://www.youtube.com/embed/gzCNHGe2BF0?autoplay=0",
+            "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Lecture 1",
+            "description": "",
+            "author": "Hannan Sir",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/xJ3sYG1zNME",
             "materials": []
           }
         ]
@@ -431,9 +812,11 @@ var courses = [
     ]
   },
   {
+    "id": 61449,
     "title": "Final Revision Batch | ACS",
     "description": "FRB for HSC 26 | Apars Classroom",
-    "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1768888447943-542919277.jpg&w=828&q=75",
+    "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/1000211330_1.png",
+    "tag": "Academic 26",
     "content": [
       {
         "type": "folder",
@@ -445,7 +828,7 @@ var courses = [
             "type": "folder",
             "title": "Chapter 6",
             "description": "Database Management System",
-            "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1762778184056-998780058.jpg&w=1920&q=75",
+            "thumbnail": "css/assets/thumbnail.png",
             "content": [
               {
                 "type": "video",
@@ -453,7 +836,7 @@ var courses = [
                 "description": "",
                 "author": "Dipit Shaha",
                 "date": "12.03.2026",
-                "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1764820692985-590312080.jpg&w=1920&q=75",
+                "thumbnail": "css/assets/thumbnail.png",
                 "videoSrc": "https://iframe.mediadelivery.net/embed/610687/f6a5d895-be6f-4ed1-bc20-1e08557d56cd?autoplay=true",
                 "materials": [
                   {
@@ -468,7 +851,7 @@ var courses = [
                 "description": "",
                 "author": "Dipit Shaha",
                 "date": "12.03.2026",
-                "thumbnail": "https://frb.aparsclassroom.com/_next/image?url=https%3A%2F%2Fapars.b-cdn.net%2Fvarsity%2Ffile-1764878996314-158305276.jpg&w=1920&q=75",
+                "thumbnail": "css/assets/thumbnail.png",
                 "videoSrc": "https://iframe.mediadelivery.net/embed/610687/7525b8f3-7169-4ced-8201-231018c9ed5a?autoplay=true",
                 "materials": []
               }
@@ -479,24 +862,84 @@ var courses = [
     ]
   },
   {
-    "id": "12001",
-    "title": "HSC 27 Cycle 3",
-    "description": "HSC 27 Cycle 3 by Asif Jafar Sir",
-    "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/Green_and_black_Brush_Strokes_Creative_YouTube_Thumbnail_20251025_191340_0000.png",
+    "id": 12346,
+    "type": "course",
+    "title": "HSC 27 Higher Math Cycle",
+    "description": "HSC 27 Higher Math Cycle",
+    "thumbnail": "https://aparsclassroom.com/assets/postimg/9MqYS036/Group-5-copy-1.jpg",
+    "tag": "Academic 27",
     "content": []
   },
   {
-    "id": "12001",
-    "title": "HSC 26 2nd Year Cycle 1",
-    "description": "Botany Chapter 8 & Zoology Chapter 7",
-    "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/Green_and_black_Brush_Strokes_Creative_YouTube_Thumbnail_20250727_23463_GGh24WX.png",
+    "id": 12347,
+    "type": "course",
+    "title": "ACS ICT Decoder | HSC 27",
+    "description": "Abhi Dutta Tushar | Kazi Rakibul Islam | Emon",
+    "thumbnail": "https://aparsclassroom.com/assets/postimg/xC5Qm0mc/ACS-ICT-Batch-Decoder-2027-1-1.jpg",
+    "tag": "Academic 27",
     "content": []
   },
   {
-    "id": "12001",
-    "title": "HSC 27 Botany full",
-    "description": "bozz cath is a very good teacher",
-    "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/Copy_of_English_Solution_-_Short_Video_20251113_104351_0000.png",
+    "id": 12348,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 26",
+    "content": []
+  },
+  {
+    "id": 12349,
+    "type": "course",
+    "title": "BCS Test Course | P2A",
+    "description": "BCS Test Course | P2A",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "BCS Preparation",
+    "content": []
+  },
+  {
+    "id": 12310,
+    "type": "course",
+    "title": "ACS Bangla | HSC 26",
+    "description": "Abida Parvin | Tanvir Ahmed",
+    "thumbnail": "https://aparsclassroom.com/assets/postimg/T2rgbZ9f/Poster.jpg",
+    "tag": "Academic 26",
+    "content": []
+  },
+  {
+    "id": 12311,
+    "type": "course",
+    "title": "ACS Physics Cycle 2",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
+  },
+  {
+    "id": 123412,
+    "type": "course",
+    "title": "ACS Physics Cycle 3",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
+  },
+  {
+    "id": 12313,
+    "type": "course",
+    "title": "ACS Physics Cycle 4",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Academic 28",
+    "content": []
+  },
+  {
+    "id": 12314,
+    "type": "course",
+    "title": "Medical Batch 2026 | ACS",
+    "description": "ACS Physics Cycle 2",
+    "thumbnail": "https://i.postimg.cc/CLMnYLpz/sqre.jpg",
+    "tag": "Admission 26",
     "content": []
   }
 ]
