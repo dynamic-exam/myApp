@@ -513,6 +513,16 @@
             "thumbnail": "css/assets/thumbnail.png",
             "videoSrc": "https://www.youtube.com/embed/PQf3tl-v7ac",
             "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Chapter 4 + Chapter 5",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/u8zbvjQx1IE",
+            "materials": []
           }
         ]
       },
@@ -757,12 +767,22 @@
         "content": [
           {
             "type": "video",
-            "title": "Lecture 1",
+            "title": "Basic Class 1",
             "description": "Basic Class | English",
             "author": "Hannan Sir",
             "date": "12.02.2026",
             "thumbnail": "css/assets/thumbnail.png",
             "videoSrc": "https://www.youtube.com/embed/gzCNHGe2BF0?autoplay=0",
+            "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Lecture 1",
+            "description": "",
+            "author": "Hannan Sir",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/xJ3sYG1zNME",
             "materials": []
           }
         ]
