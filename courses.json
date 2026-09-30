@@ -34,7 +34,12 @@
                 "date": "25.09.2026",
                 "thumbnail": "css/assets/thumbnail.png",
                 "videoSrc": "https://youtube.com/embed/AXX1PjAtmhc",
-                "materials": []
+                "materials": [
+                  {
+                    "label": "Lecture Sheet",
+                    "src": ""
+                  }
+                ]
               },
               {
                 "type": "video",
