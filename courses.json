@@ -483,7 +483,38 @@
         "title": "Physics 1st Paper",
         "description": "All 10 chapters of physics 1st paper by Abid Jafar Sir.",
         "thumbnail": "css/assets/thumbnail.png",
-        "content": []
+        "content": [
+          {
+            "type": "video",
+            "title": "Chapter: 1, Part 1",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/AT04WFgve70",
+            "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Chapter 1, Part 2 + Chapter 2",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/uk1qhEFm6YI",
+            "materials": []
+          },
+          {
+            "type": "video",
+            "title": "Chapter 3 + Chapter 9",
+            "description": "",
+            "author": "Abid Jafar",
+            "date": "25.09.2026",
+            "thumbnail": "css/assets/thumbnail.png",
+            "videoSrc": "https://www.youtube.com/embed/PQf3tl-v7ac",
+            "materials": []
+          }
+        ]
       },
       {
         "type": "folder",
