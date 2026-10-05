@@ -813,6 +813,7 @@ var courses=[
   },
   {
     "id": 61449,
+    "type": "course",
     "title": "Final Revision Batch | ACS",
     "description": "FRB for HSC 26 | Apars Classroom",
     "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/1000211330_1.png",
