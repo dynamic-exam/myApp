@@ -297,7 +297,7 @@ var courses=[
   {
     "id": 12345,
     "type": "course",
-    "title": "HSC 27 Pre medical course | Pacemaker",
+    "title": "HSC 26 Pre Medical & Medical | Pacemaker",
     "description": "Pre medical course for HSC 26 | 8 Subjects | 50+ Books | Daily & Weekly Exams",
     "thumbnail": "https://asifsirpacemaker.com/media/course/thumbnail/WhatsApp_Image_2025-12-30_at_1.09.17_PM.jpeg",
     "tag": "Admission 26",
