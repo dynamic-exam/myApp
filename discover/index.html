@@ -1,1 +1,980 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraLMS | Next-Gen Learning Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration for custom colors and dark theme tweaks -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#080c14',
+                        cardBg: '#111827',
+                        cardBorder: '#1f293d',
+                        brandPrimary: '#3b82f6',
+                        brandCyan: '#06b6d4',
+                        brandPurple: '#8b5cf6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glowPulse: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Glassmorphism Utility */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
+        .glass-panel-glow {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.25);
+        }
+
+        /* Subtle grid background overlay */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Gradient text magic */
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 50%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-blue-600 selection:text-white antialiased">
+
+    <!-- Background Gradient Spheres for Dark Glow Effects -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] animate-glow-pulse"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyan-500/15 rounded-full blur-[120px] animate-glow-pulse" style="animation-delay: 1.5s;"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px] animate-glow-pulse" style="animation-delay: 3s;"></div>
+        <div class="absolute inset-0 bg-grid-pattern opacity-60"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-darkBg/80 border-b border-gray-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">Aura<span class="text-gradient">LMS</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-blue-400 transition-colors duration-200">Why Us</a>
+                <a href="#stats" class="hover:text-blue-400 transition-colors duration-200">Impact</a>
+                <a href="#courses" class="hover:text-blue-400 transition-colors duration-200">Courses</a>
+                <a href="#stories" class="hover:text-blue-400 transition-colors duration-200">Success Stories</a>
+                <a href="#pricing" class="hover:text-blue-400 transition-colors duration-200">Pricing</a>
+            </nav>
+
+            <!-- Nav CTA Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#login" class="text-sm font-medium text-gray-300 hover:text-white px-4 py-2 transition-colors">Sign In</a>
+                <a href="#trial" class="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center gap-2">
+                    Start Free Trial
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-gray-800 px-4 pt-4 pb-6 space-y-4 transition-all">
+            <a href="#about" class="block text-gray-300 hover:text-white py-2 text-base font-medium">Why Us</a>
+            <a href="#stats" class="block text-gray-300 hover:text-white py-2 text-base font-medium">Impact</a>
+            <a href="#courses" class="block text-gray-300 hover:text-white py-2 text-base font-medium">Courses</a>
+            <a href="#stories" class="block text-gray-300 hover:text-white py-2 text-base font-medium">Success Stories</a>
+            <a href="#pricing" class="block text-gray-300 hover:text-white py-2 text-base font-medium">Pricing</a>
+            <div class="pt-4 border-t border-gray-800 flex flex-col gap-3">
+                <a href="#login" class="w-full text-center py-2.5 text-gray-300 hover:text-white font-medium border border-gray-700 rounded-xl">Sign In</a>
+                <a href="#trial" class="w-full text-center py-2.5 text-white bg-blue-600 rounded-xl font-semibold">Start Free Trial</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-8">
+                    
+                    <!-- Announcement Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-blue-500/30 text-xs sm:text-sm text-blue-300 animate-float">
+                        <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span class="font-semibold text-cyan-400">NEW 3.0 Platform Upgrade</span>
+                        <span class="text-gray-500">|</span>
+                        <span class="text-gray-300">AI Adaptive Pathways Released</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-white">
+                        Empower Your <br class="hidden sm:inline"/>
+                        <span class="text-gradient">Learning Journey</span> With AI
+                    </h1>
+
+                    <!-- Hero Subtitle -->
+                    <p class="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed max-w-2xl mx-auto">
+                        Transform your enterprise & personal skills with enterprise-grade learning management, industry mentor live-sessions, and AI-accelerated skill mapping.
+                    </p>
+
+                    <!-- Hero CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <a href="#courses" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 rounded-xl hover:shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center justify-center gap-3">
+                            <i data-lucide="rocket" class="w-5 h-5"></i>
+                            Start 14-Day Free Trial
+                        </a>
+                        <a href="#demo" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-gray-200 glass-panel hover:bg-gray-800/80 rounded-xl border border-gray-700/80 hover:border-gray-600 hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-cyan-400"></i>
+                            Watch Interactive Demo
+                        </a>
+                    </div>
+
+                    <!-- Trust Micro-Proof -->
+                    <div class="pt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i>
+                            <span>No Credit Card Required</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Instant Access</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Cancel Anytime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Dashboard Mockup Showcase -->
+                <div class="mt-14 relative max-w-5xl mx-auto">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative rounded-2xl glass-panel p-3 sm:p-5 border border-gray-800 shadow-2xl">
+                        <!-- Window Controls Bar -->
+                        <div class="flex items-center justify-between pb-3 mb-4 border-b border-gray-800/80 px-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <div class="text-xs text-gray-500 font-mono">https://app.auralms.edu/dashboard/analytics</div>
+                            <div class="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Live Sync Active
+                            </div>
+                        </div>
+
+                        <!-- Inner UI Preview Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Left: User Course Progress -->
+                            <div class="md:col-span-2 glass-panel p-5 rounded-xl border border-gray-800 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-200">Active Learning Path</h4>
+                                        <p class="text-xs text-gray-400">Full-Stack AI Engineering Specialization</p>
+                                    </div>
+                                    <span class="text-xs bg-blue-500/20 text-blue-400 font-medium px-2.5 py-1 rounded-md border border-blue-500/30">78% Completed</span>
+                                </div>
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full" style="width: 78%"></div>
+                                </div>
+                                <!-- Module Cards inside mockup -->
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="bg-darkBg/60 p-3 rounded-lg border border-gray-800/80 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                            <i data-lucide="code-2" class="w-4 h-4"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-semibold text-gray-300">Neural Nets 101</p>
+                                            <p class="text-[10px] text-emerald-400">Passed (98/100)</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-darkBg/60 p-3 rounded-lg border border-gray-800/80 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                            <i data-lucide="cpu" class="w-4 h-4"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs font-semibold text-gray-300">LLM Fine-Tuning</p>
+                                            <p class="text-[10px] text-yellow-400">In Progress</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Daily Skill Streak & Score -->
+                            <div class="glass-panel p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs font-semibold text-gray-400">Skill Velocity Score</span>
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
+                                    </div>
+                                    <div class="text-3xl font-extrabold text-white">9,840 <span class="text-xs font-normal text-gray-400">pts</span></div>
+                                    <p class="text-xs text-emerald-400 font-medium mt-1">↑ 24% higher than last week</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-gray-800">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center">
+                                            <i data-lucide="flame" class="w-4 h-4"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-bold text-white">18 Day Streak!</div>
+                                            <div class="text-[10px] text-gray-400">Top 3% of active learners</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success & Impact Highlights (Stats Counter Cards) -->
+        <section id="stats" class="py-16 relative border-y border-gray-800/60 bg-darkBg/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Institute Milestones</h2>
+                    <p class="text-2xl sm:text-3xl font-bold text-white mt-1">Proven Results Driven By Innovation</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Stat Card 1 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center group hover:border-blue-500/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            <span class="counter" data-target="99">0</span>.<span class="counter" data-target="4">0</span>%
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Course Pass Rate</p>
+                    </div>
+
+                    <!-- Stat Card 2 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center group hover:border-cyan-500/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            <span class="counter" data-target="65">0</span>K+
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Graduated Students</p>
+                    </div>
+
+                    <!-- Stat Card 3 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center group hover:border-purple-500/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="building-2" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            <span class="counter" data-target="150">0</span>+
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Hiring Tech Partners</p>
+                    </div>
+
+                    <!-- Stat Card 4 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 text-center group hover:border-amber-500/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="star" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            <span class="counter" data-target="4">0</span>.<span class="counter" data-target="9">0</span>/5
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Global Learner Rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us / Features -->
+        <section id="about" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-blue-400">Designed For Real Growth</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Why Modern Learners Choose AuraLMS</p>
+                    <p class="text-gray-400 text-sm sm:text-base">Everything you need to master new competencies and accelerate your professional trajectory.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center mb-6">
+                            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI-Driven Pathways</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Adaptive AI algorithms personalize your syllabus dynamically based on your existing skill gaps and learning speed.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center mb-6">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Interactive Code Labs</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Practice directly inside the browser with cloud sandbox environments, automated testing, and instant feedback.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center mb-6">
+                            <i data-lucide="users-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">1-on-1 Expert Mentorship</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Book live 1-on-1 review sessions with senior engineering leaders and industry experts directly from your calendar.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Verified Blockchain Diplomas</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Earn tamper-proof certificates verifiable on-chain to share easily with LinkedIn recruiters and top employers.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center mb-6">
+                            <i data-lucide="download-cloud" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Offline Mobile Sync</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Download modules, audio tracks, and quizzes for seamless learning anytime, even while traveling or offline.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 hover:border-rose-500/40 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-rose-600/20 text-rose-400 flex items-center justify-center mb-6">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Career Placement Guarantee</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Gain direct intro access to our network of 150+ hiring partner tech firms upon completing your capstone portfolio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Courses & Filterable Showcase -->
+        <section id="courses" class="py-20 relative bg-darkBg/60 border-t border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Curriculum Showcase</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Explore High-Impact Learning Paths</p>
+                    </div>
+
+                    <!-- Filter Tabs Container -->
+                    <div class="flex flex-wrap gap-2 glass-panel p-1.5 rounded-xl border border-gray-800" id="filterContainer">
+                        <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-blue-600 text-white" data-category="all">All Paths</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-all duration-200" data-category="webdev">Web Dev</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-all duration-200" data-category="ai">AI & Data</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-all duration-200" data-category="design">UI/UX Design</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-all duration-200" data-category="cloud">DevOps & Cloud</button>
+                    </div>
+                </div>
+
+                <!-- Courses Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="courseGrid">
+
+                    <!-- Course Card 1 -->
+                    <div class="course-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col group" data-category="webdev">
+                        <!-- Card Banner/Visual Accent -->
+                        <div class="relative h-48 bg-gradient-to-br from-blue-900/40 via-gray-900 to-black p-6 flex flex-col justify-between overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all"></div>
+                            <div class="flex justify-between items-start z-10">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">Web Development</span>
+                                <span class="flex items-center gap-1 text-xs font-bold text-amber-400 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i> 4.9
+                                </span>
+                            </div>
+                            <div class="z-10">
+                                <i data-lucide="code" class="w-10 h-10 text-blue-400 mb-2"></i>
+                            </div>
+                        </div>
+                        <!-- Card Content -->
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Full-Stack Next.js 14 & Cloud Systems</h3>
+                                <p class="text-gray-400 text-sm mt-2 line-clamp-2">Master modern server components, distributed databases, Tailwind CSS, and Vercel edge deployment.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-blue-400"></i> 12 Weeks</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-blue-400"></i> 14,230 Enrolled</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <div>
+                                    <span class="text-2xl font-bold text-white">$89</span>
+                                    <span class="text-xs text-gray-500 line-through ml-1">$199</span>
+                                </div>
+                                <a href="#" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-colors flex items-center gap-1.5">
+                                    Enroll Path <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 2 -->
+                    <div class="course-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group" data-category="ai">
+                        <!-- Card Banner -->
+                        <div class="relative h-48 bg-gradient-to-br from-cyan-900/40 via-gray-900 to-black p-6 flex flex-col justify-between overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition-all"></div>
+                            <div class="flex justify-between items-start z-10">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">AI & Data</span>
+                                <span class="flex items-center gap-1 text-xs font-bold text-amber-400 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i> 5.0
+                                </span>
+                            </div>
+                            <div class="z-10">
+                                <i data-lucide="cpu" class="w-10 h-10 text-cyan-400 mb-2"></i>
+                            </div>
+                        </div>
+                        <!-- Card Content -->
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Generative AI Engineering & RAG Systems</h3>
+                                <p class="text-gray-400 text-sm mt-2 line-clamp-2">Build custom LLM agents, vector database search pipelines, and PyTorch deep learning models.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i> 10 Weeks</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-cyan-400"></i> 22,810 Enrolled</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <div>
+                                    <span class="text-2xl font-bold text-white">$119</span>
+                                    <span class="text-xs text-gray-500 line-through ml-1">$249</span>
+                                </div>
+                                <a href="#" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition-colors flex items-center gap-1.5">
+                                    Enroll Path <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3 -->
+                    <div class="course-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all duration-300 flex flex-col group" data-category="design">
+                        <!-- Card Banner -->
+                        <div class="relative h-48 bg-gradient-to-br from-purple-900/40 via-gray-900 to-black p-6 flex flex-col justify-between overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition-all"></div>
+                            <div class="flex justify-between items-start z-10">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">UI/UX Design</span>
+                                <span class="flex items-center gap-1 text-xs font-bold text-amber-400 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i> 4.8
+                                </span>
+                            </div>
+                            <div class="z-10">
+                                <i data-lucide="palette" class="w-10 h-10 text-purple-400 mb-2"></i>
+                            </div>
+                        </div>
+                        <!-- Card Content -->
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Enterprise Design Systems & Micro-Interactions</h3>
+                                <p class="text-gray-400 text-sm mt-2 line-clamp-2">Master Figma tokens, accessibility standards, user research, and interactive prototyping.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-purple-400"></i> 8 Weeks</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-purple-400"></i> 9,410 Enrolled</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <div>
+                                    <span class="text-2xl font-bold text-white">$69</span>
+                                    <span class="text-xs text-gray-500 line-through ml-1">$149</span>
+                                </div>
+                                <a href="#" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-purple-600 hover:bg-purple-500 transition-colors flex items-center gap-1.5">
+                                    Enroll Path <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 4 -->
+                    <div class="course-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col group" data-category="cloud">
+                        <!-- Card Banner -->
+                        <div class="relative h-48 bg-gradient-to-br from-emerald-900/40 via-gray-900 to-black p-6 flex flex-col justify-between overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl group-hover:bg-emerald-500/30 transition-all"></div>
+                            <div class="flex justify-between items-start z-10">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">DevOps & Cloud</span>
+                                <span class="flex items-center gap-1 text-xs font-bold text-amber-400 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i> 4.9
+                                </span>
+                            </div>
+                            <div class="z-10">
+                                <i data-lucide="server" class="w-10 h-10 text-emerald-400 mb-2"></i>
+                            </div>
+                        </div>
+                        <!-- Card Content -->
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Cloud Native DevOps, Kubernetes & AWS</h3>
+                                <p class="text-gray-400 text-sm mt-2 line-clamp-2">Architect resilient CI/CD workflows, Terraform IaC pipelines, and Kubernetes microservices.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i> 14 Weeks</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> 11,500 Enrolled</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <div>
+                                    <span class="text-2xl font-bold text-white">$99</span>
+                                    <span class="text-xs text-gray-500 line-through ml-1">$219</span>
+                                </div>
+                                <a href="#" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 transition-colors flex items-center gap-1.5">
+                                    Enroll Path <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof & Success Stories -->
+        <section id="stories" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-purple-400">Student Success Stories</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Transformed Careers Worldwide</p>
+                    <p class="text-gray-400 text-sm">See how AuraLMS helped learners land tech roles at global industry leaders.</p>
+                </div>
+
+                <!-- Testimonial Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Testimonial 1 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "The AI learning pathways completely changed my study schedule. I landed my Senior Full-Stack role within 4 months of completing the curriculum!"
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-800 flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center font-bold text-white text-sm">
+                                AR
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Alex Rivera</h4>
+                                <p class="text-xs text-gray-400">Software Engineer @ FinTech Corp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "1-on-1 mentorship sessions were worth every penny. Getting direct code reviews from active industry lead engineers was priceless."
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-800 flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white text-sm">
+                                SC
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Sophia Chen</h4>
+                                <p class="text-xs text-gray-400">AI Research Intern @ AI Labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 relative flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "Our enterprise engineering team onboarded 40 junior hires through AuraLMS. Time-to-productivity dropped by 50%. Incredible LMS!"
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-800 flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-bold text-white text-sm">
+                                MP
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Marcus Patel</h4>
+                                <p class="text-xs text-gray-400">VP of Engineering @ CloudScale</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hiring Partners Logos Marquee Bar -->
+                <div class="mt-16 pt-10 border-t border-gray-800/60">
+                    <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">Our Alumni Work At Top Global Tech Companies</p>
+                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all">
+                        <span class="text-lg font-bold text-gray-400 flex items-center gap-1.5"><i data-lucide="box" class="w-5 h-5 text-blue-400"></i> NEXUS AI</span>
+                        <span class="text-lg font-bold text-gray-400 flex items-center gap-1.5"><i data-lucide="layers" class="w-5 h-5 text-cyan-400"></i> STACKFLOW</span>
+                        <span class="text-lg font-bold text-gray-400 flex items-center gap-1.5"><i data-lucide="cloud-lightning" class="w-5 h-5 text-purple-400"></i> CLOUDPULSE</span>
+                        <span class="text-lg font-bold text-gray-400 flex items-center gap-1.5"><i data-lucide="database" class="w-5 h-5 text-emerald-400"></i> DATACORE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / Enrollment Tiers -->
+        <section id="pricing" class="py-20 relative bg-darkBg/60 border-t border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-blue-400">Transparent Investment</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Choose Your Learning Tier</p>
+                    <p class="text-gray-400 text-sm">Flexible monthly & annual options with no lock-in commitments.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+
+                    <!-- Tier 1: Starter -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Starter Learner</span>
+                            <div class="text-4xl font-extrabold text-white">$29 <span class="text-sm font-normal text-gray-400">/ mo</span></div>
+                            <p class="text-gray-400 text-xs">Essential access for self-paced individuals learning key tech skills.</p>
+                            <ul class="space-y-3 text-sm text-gray-300 pt-4 border-t border-gray-800">
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Access to 100+ Core Courses
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Community Forum Access
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Standard Course Certificates
+                                </li>
+                                <li class="flex items-center gap-2.5 text-gray-500">
+                                    <i data-lucide="x" class="w-4 h-4"></i> AI Adaptive Learning Path
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="w-full py-3 text-center text-sm font-semibold text-gray-200 border border-gray-700 hover:border-gray-500 rounded-xl transition-all">Get Started</a>
+                    </div>
+
+                    <!-- Tier 2: Pro (Highlighted with Glowing Border) -->
+                    <div class="glass-panel-glow p-8 rounded-2xl relative flex flex-col justify-between space-y-6 transform md:-translate-y-2">
+                        <!-- Most Popular Tag -->
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[11px] font-bold rounded-full uppercase tracking-wider shadow-md">
+                            Most Popular Choice
+                        </div>
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Pro Developer</span>
+                            <div class="text-4xl font-extrabold text-white">$59 <span class="text-sm font-normal text-gray-400">/ mo</span></div>
+                            <p class="text-gray-400 text-xs">Complete bundle for serious learners seeking mentorship & job acceleration.</p>
+                            <ul class="space-y-3 text-sm text-gray-300 pt-4 border-t border-gray-800">
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> All 500+ Courses & Tracks
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> AI Custom Path Generator
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> 2 Mentorship Sessions / Mo
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> On-Chain Blockchain Diplomas
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="w-full py-3 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl shadow-lg shadow-blue-500/25 hover:opacity-95 transition-all">Start 14-Day Free Trial</a>
+                    </div>
+
+                    <!-- Tier 3: Enterprise -->
+                    <div class="glass-panel p-8 rounded-2xl border border-gray-800 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Enterprise & Team</span>
+                            <div class="text-4xl font-extrabold text-white">$149 <span class="text-sm font-normal text-gray-400">/ user/mo</span></div>
+                            <p class="text-gray-400 text-xs">Custom training, analytics dashboards & dedicated mentor pods for teams.</p>
+                            <ul class="space-y-3 text-sm text-gray-300 pt-4 border-t border-gray-800">
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Unlimited Team Seats
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Enterprise Admin Analytics
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Dedicated Success Manager
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> SSO & Custom Integrations
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="w-full py-3 text-center text-sm font-semibold text-gray-200 border border-gray-700 hover:border-gray-500 rounded-xl transition-all">Contact Enterprise Sales</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-panel-glow rounded-3xl p-10 sm:p-14 text-center relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Ready To Supercharge Your Future?</h2>
+                        <p class="text-gray-300 text-base">Join over 65,000+ ambitious learners leveling up their tech skills today with AuraLMS.</p>
+                        <div class="pt-2">
+                            <a href="#" class="inline-flex items-center gap-2 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 rounded-xl hover:shadow-2xl hover:shadow-blue-500/40 hover:scale-[1.02] transition-all">
+                                Get Started Free Today
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 bg-darkBg text-gray-400 text-sm py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">AuraLMS</span>
+                    </a>
+                    <p class="text-xs text-gray-500 max-w-sm">The world's premier dark-themed adaptive Learning Management System for engineering and digital mastery.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white mb-3 text-xs uppercase tracking-wider">Product</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">Course Catalog</a></li>
+                        <li><a href="#" class="hover:text-white transition">AI Learning Path</a></li>
+                        <li><a href="#" class="hover:text-white transition">Enterprise LMS</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing Tiers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white mb-3 text-xs uppercase tracking-wider">Institute</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mentors & Faculty</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press Kit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white mb-3 text-xs uppercase tracking-wider">Legal & Support</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 AuraLMS Institute Inc. All rights reserved.</p>
+                <div class="flex items-center gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-gray-300"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts Logic -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer on clicking menu links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Course Category Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button active state styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white');
+                    b.classList.add('text-gray-400');
+                });
+                btn.classList.add('bg-blue-600', 'text-white');
+                btn.classList.remove('text-gray-400');
+
+                const category = btn.getAttribute('data-category');
+
+                // Filter course items with smooth fade effect
+                courseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 200);
+                    }
+                });
+            });
+        });
+
+        // 3. Stats Counter Animation on Scroll Intersection
+        const counterElements = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function animateCounters() {
+            counterElements.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const duration = 1500; // milliseconds
+                const startTime = performance.now();
+
+                function updateNumber(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    if (elapsedTime < duration) {
+                        const progress = elapsedTime / duration;
+                        const currentVal = Math.floor(progress * target);
+                        counter.textContent = currentVal;
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+                requestAnimationFrame(updateNumber);
+            });
+        }
+
+        // Observer to start counter when scrolled into view
+        const statsSection = document.getElementById('stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animateCounters();
+                    animated = true;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
