@@ -12,5 +12,10 @@
     "icon": "https://dynamic-exam.github.io/myApp/assets/image3.jpg",
     "label": "Owls | Strigiformes",
     "link": "https://en.wikipedia.org/wiki/Owl"
+  },
+  {
+    "icon": "https://dynamic-exam.github.io/myApp/assets/image4.jpg",
+    "label": "Polar Bear | Ursus maritimus",
+    "link": "https://en.wikipedia.org/wiki/Polar_bear"
   }
 ]
