@@ -7,14 +7,20 @@
   },
   {
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKhkohBqCpmt6f8Ik2H9VX6Ta32rRDltUMHLkzBzUBNZwUYa75l6KOXBTn&s=10",
-    "label": "Card 2"
+    "tag": "tag 2",
+    "label": "Card 2",
+    "description": "Description 2 bla bla bla"
   },
   {
     "thumbnail": "https://cdn.pixabay.com/photo/2013/07/25/13/01/stones-167089_1280.jpg",
-    "label": "Card 3"
+    "tag": "tag 3",
+    "label": "Card 3",
+    "description": "Description 3 bla bla bla"
   },
   {
     "thumbnail": "https://png.pngtree.com/thumb_back/fh260/background/20210709/pngtree-luqid-tentacle-random-color-modern-image_739352.jpg",
-    "label": "Card 4"
+    "tag": "tag 4",
+    "label": "Card 4",
+    "description": "Description 4 bla bla bla"
   }
 ]
