@@ -2,7 +2,8 @@
   {
     "thumbnail": "https://picsum.photos/1600/900",
     "tag": "tag 1",
-    "label": "card 1"
+    "label": "card 1",
+    "description": "Description 1 bla bla bla"
   },
   {
     "thumbnail": "https://picsum.photos/1600/900",
