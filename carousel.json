@@ -1,20 +1,20 @@
 [
   {
-    "thumbnail": "https://picsum.photos/1600/900",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDy5OcYwoSU9LHJ9heE9jPxT611FkZ6FW__2gdlbquF3oXedQcCPJHGfQ&s=10",
     "tag": "tag 1",
-    "label": "card 1",
+    "label": "Card 1",
     "description": "Description 1 bla bla bla"
   },
   {
-    "thumbnail": "https://picsum.photos/1600/900",
-    "label": "card 2"
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKhkohBqCpmt6f8Ik2H9VX6Ta32rRDltUMHLkzBzUBNZwUYa75l6KOXBTn&s=10",
+    "label": "Card 2"
   },
   {
-    "thumbnail": "https://picsum.photos/1600/900",
-    "label": "card 3"
+    "thumbnail": "https://cdn.pixabay.com/photo/2013/07/25/13/01/stones-167089_1280.jpg",
+    "label": "Card 3"
   },
   {
-    "thumbnail": "https://picsum.photos/1600/900",
-    "label": "card 4"
+    "thumbnail": "https://png.pngtree.com/thumb_back/fh260/background/20210709/pngtree-luqid-tentacle-random-color-modern-image_739352.jpg",
+    "label": "Card 4"
   }
 ]
