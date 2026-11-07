@@ -2,6 +2,8 @@
   {
     "thumbnail": "https://static.vecteezy.com/system/resources/thumbnails/003/452/115/small/wildlife-elk-in-forest-nature-landscape-illustration-free-vector.jpg",
     "tag": "Nature",
+    "tagBG":"#b1dedc",
+    "tagColor": "#0c3b39",
     "label": "Wildlife deer in mountains",
     "description": "Deer appear in art from Paleolithic cave paintings onwards.",
     "link":"https://en.wikipedia.org/wiki/Deer"
